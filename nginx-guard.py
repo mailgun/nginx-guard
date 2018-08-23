@@ -80,7 +80,7 @@ class NginxGuard(object):
         self.log.debug("Reloading nginx")
         cmd = [self.cfg['nginx_bin'], '-s', 'reload']
         try:
-            subprocess.run(cmd, shell=True, check=True)
+            subprocess.check_call(cmd, shell=True, check=True)
             self.log.debug("Nginx was reloaded successfully.")
         except subprocess.CalledProcessError:
             self.log.error("Failed to reload nginx!")
