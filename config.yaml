@@ -1,0 +1,6 @@
+nginx_bin: /usr/sbin/nginx
+whitelist_file: /etc/nginx/whitelist-guard
+mode: one-shot
+allow_static:
+    - 1.2.3.4
+    - 10.0.0.1/24
