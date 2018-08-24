@@ -78,10 +78,9 @@ class NginxGuard(object):
         return not current_sources == sources
 
     def reload_nginx(self):
-        self.log.debug("Reloading nginx")
-        cmd = [self.cfg['nginx_bin'], '-s', 'reload']
+        self.log.debug("Reloading nginx: {}".format(self.cfg['nginx_reload']))
         try:
-            subprocess.check_call(cmd, shell=True)
+            subprocess.check_call(self.cfg['nginx_reload'], shell=True)
             self.log.debug("Nginx was reloaded successfully.")
         except subprocess.CalledProcessError:
             self.log.error("Failed to reload nginx!")

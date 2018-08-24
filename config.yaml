@@ -1,4 +1,4 @@
-nginx_bin: /usr/sbin/nginx
+nginx_reload: 'service nginx reload'
 whitelist_file: /etc/nginx/whitelist-guard
 mode: one-shot
 allow_static:
